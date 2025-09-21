@@ -71,6 +71,9 @@ print(settings.api_key)
 
 Attribute names must be expressed in *lowercase* with respect to its actual environment variable (e.g. `api_key` for `API_KEY`).
 
+> [!TIP]
+> `model_config` could be omitted, especially if you will not use `.env` file.
+
 In particular, followed order for environment variables is:
 
 1. Environment variable (i.e., `export ...`)
@@ -79,7 +82,22 @@ In particular, followed order for environment variables is:
 
 If an attribute doesn't have any default value and no environment variable (or `.env` is provided), then an error will be raised!
 
-`model_config` could be omitted, especially if you will not use `.env` file.
+In fact, unlike Pydantic BaseModel, default values of BaseSettings **fields are validated by default**. You can disable this behaviour by setting `validate_default=False` either in model_config or on field level by `Field(validate_default=False)`.
+
+```py
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(validate_default=False)
+
+    # default won't be validated
+    foo: int = 'test'
+```
+
+```py
+class Settings1(BaseSettings):
+    # default won't be validated
+    foo: int = Field('test', validate_default=False)
+```
+
 
 
 
