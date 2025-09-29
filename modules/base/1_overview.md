@@ -15,6 +15,31 @@ Some of the main benefits of FastAPI are:
 
 This makes FastAPI particularly well-suited for modern applications where speed, data integrity, and developer productivity are crucial such in *distributed edge programming*.
 
+## Install
+
+If you use Conda, create a new environment called `fastapi` or whatever:
+
+```bash
+conda create -n fastapi python=3.12
+
+conda activate fastapi 
+```
+
+Otherwise, create new [virtual environment](https://docs.python.org/3/library/venv.html) or install for main Python.
+
+Then, following the [official documentation](https://fastapi.tiangolo.com/tutorial/#run-the-code), install FastAPI library running:
+
+```bash
+pip install "fastapi[standard]"
+```
+
+**That it's**, as usual in Python it is very easy.
+
+Check installation running:
+
+```bash
+fastapi --version
+```
 
 ## Hello world step-by-step
 
