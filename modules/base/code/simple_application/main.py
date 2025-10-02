@@ -10,7 +10,6 @@ class Product(BaseModel):
 
     name: str
     price: float
-    tags: List[str]
     description: Optional[str] = None
 
 
@@ -35,12 +34,10 @@ async def read_products() -> list[Product]:
         Product(
             name="Keyboard",
             price=42.0,
-            tags=["PC", "Hardware"]
         ),
         Product(
             name="Mouse",
             price=32.0,
-            tags=["PC", "Hardware"],
             description="It is not the animal!"
         ),
     ]
@@ -52,12 +49,10 @@ async def read_product(product_id: int) -> Product:
         Product(
             name="Keyboard",
             price=42.0,
-            tags=["PC", "Hardware"]
         ),
         Product(
             name="Mouse",
             price=32.0,
-            tags=["PC", "Hardware"],
             description="It is not the animal!"
         ),
     ]

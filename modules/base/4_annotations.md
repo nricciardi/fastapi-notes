@@ -41,7 +41,7 @@ Some of the most commonly used parameters include:
 
 ## Depends
 
-When building APIs, it’s common to need reusable logic across multiple endpoints: authentication, database sessions, pagination parameters, etc. FastAPI provides a powerful system called **dependency injection**, and the key tool is `Depends`.
+When building APIs, it’s common to need reusable logic across multiple endpoints: authentication, database sessions, pagination parameters, etc. FastAPI provides a powerful system called ***dependency injection***, and the key tool is `Depends`.
 
 When we specify `Depends`, we tell FastAPI that a parameter’s value should **come from another function**, not directly from the request.
 
@@ -94,4 +94,10 @@ def get_products(db: Annotated[Session, Depends(get_db)]):
 ```
 
 
+## References
 
+https://fastapi.tiangolo.com/tutorial/query-params-str-validations/
+
+https://fastapi.tiangolo.com/tutorial/path-params-numeric-validations/
+
+https://fastapi.tiangolo.com/reference/dependencies/?h=depen#fastapi.Depends

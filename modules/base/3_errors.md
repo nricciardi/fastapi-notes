@@ -1,7 +1,5 @@
 # Errors
 
-https://fastapi.tiangolo.com/tutorial/handling-errors/?h=err
-
 When building web applications, it is crucial to handle errors in a way that provides useful feedback to the client without exposing unnecessary internal details. FastAPI provides a simple and powerful way to manage errors through exceptions.
 
 The most common tool is the `HTTPException` class, which allows us to return HTTP error responses with custom status codes and messages.
@@ -54,7 +52,9 @@ async def http_exception_handler(request: Request, exc: HTTPException):
     )
 ```
 
+## References
 
+https://fastapi.tiangolo.com/tutorial/handling-errors/?h=err
 
 
 
